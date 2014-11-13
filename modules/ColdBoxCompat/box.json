@@ -14,7 +14,7 @@
     },
     "bugs":"",
     "slug":"cbcompat",
-    "shortDescription":"A module for ColdBox 4.0 apps that restores functions, conventions, and plugin functionality from ColdBox 3.8 to make upgrading easier.",
+    "shortDescription":"A module for ColdBox 4.0 apps that restores functions, conventions, and plugin functionality from ColdBox 3.x to make upgrading easier.",
     "description":"",
     "instructions":"Install this module in a ColdBox 4.0 app to get back some of the 3.x functionality. ",
     "changelog":"",
