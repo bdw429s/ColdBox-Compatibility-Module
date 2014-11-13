@@ -274,7 +274,7 @@ Modification History:
 					mConfig = controller.getSetting("modules");
 					// Verify module
 					if( NOT structKeyExists(mConfig,arguments.module) ){
-						getUtil().throwit(message="The module requested #arguments.module# does not exist or has not been loaded.",
+						throw(message="The module requested #arguments.module# does not exist or has not been loaded.",
 									  	  detail="Modules defined are #structKeyList(mConfig)#",
 									  	  type="PluginService.ModuleConfigurationNotFound");
 					}
@@ -285,7 +285,7 @@ Modification History:
 					}
 					
 					// Else throw exception
-					getUtil().throwit(message="Plugin #arguments.plugin# was not located in the specified module: #arguments.module#",
+					throw(message="Plugin #arguments.plugin# was not located in the specified module: #arguments.module#",
 									  detail="The path search was: ",
 									  type="PluginService.ModulePluginNotFound");
 				}
