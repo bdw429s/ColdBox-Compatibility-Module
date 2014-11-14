@@ -28,7 +28,7 @@ The following WireBox mapping DSL namespaces are restored
 * coldbox:debuggerService (requires cbdebugger module)
 * coldbox:validationManager (requires validation module)
 
-This plugin also comes packaged with all the original ColdBox 3.8.1 plugins, so you only need to install this module and you'll have it all back again.
+This module also comes packaged with all the original ColdBox 3.8.1 plugins, so you only need to install this module and you'll have it all back again.
 
 Known issues;
 * When this module loads, it will copy Plugin.cfc to the coldbox/system directory.  If you uninstall this module, it will not remove that file.
