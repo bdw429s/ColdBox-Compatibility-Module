@@ -33,6 +33,7 @@ This plugin also comes packaged with all the original ColdBox 3.8.1 plugins, so 
 Known issues;
 * When this module loads, it will copy Plugin.cfc to the coldbox/system directory.  If you uninstall this module, it will not remove that file.
 * Plugins only work for the default convention location of "plugins". 
+* You will still need to change the Application.cfc to use coldbox.system.Bootstrap instead of coldbox.system.ColdBox.  There's really no way around that one.
 
 Installation
 Drop this module in the modules folder or run "install cbcompat" from CommandBox and reinit the application.
