@@ -216,3 +216,8 @@ pip-log.txt
 .mr.developer.cfg
 
 /coldbox
+/modules/cbdebugger
+/modules/i18n
+/modules/mailservices
+/modules/validation
+settings.xml

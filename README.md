@@ -24,6 +24,9 @@ The following WireBox mapping DSL namespaces are restored
 * coldbox:fwconfigbean
 * coldbox:configbean
 * coldbox:cacheManager
+* coldbox:mailsettingsbean (requires mailservices module)
+* coldbox:debuggerService (requires cbdebugger module)
+* coldbox:validationManager (requires validation module)
 
 This plugin also comes packaged with all the original ColdBox 3.8.1 plugins, so you only need to install this module and you'll have it all back again.
 

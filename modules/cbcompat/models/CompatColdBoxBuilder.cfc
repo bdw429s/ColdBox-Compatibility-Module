@@ -46,11 +46,36 @@ component implements="coldbox.system.ioc.dsl.IDSLBuilder"  {
 		// intercept the coldbox:cacheManager namespace
 		} else if( dsl == 'coldbox:cacheManager' ) {
 			return injector.getInstance( dsl='cachebox:default' );
+						
+		// intercept the coldbox:mailsettingsbean namespace
+		} else if( dsl == 'coldbox:mailsettingsbean' ) {
+			requireModule( 'mailservices', dsl, targetObject );
+			
+			var MailSettingsBean = injector.getInstance( 'MailSettingsBean@mailservices' );
+			MailSettingsBean.init( argumentCollection=injector.getInstance( dsl='coldbox:setting:mailSettings' ) );
+			return MailSettingsBean;
+			
+		// intercept the coldbox:debuggerService namespace
+		} else if( dsl == 'coldbox:debuggerService' ) {
+			requireModule( 'cbdebugger', dsl, targetObject );
+			return injector.getInstance( 'debuggerService@cbdebugger' );
+			
+		// intercept the coldbox:validationManager namespace
+		} else if( dsl == 'coldbox:validationManager' ) {
+			requireModule( 'validation', dsl, targetObject );
+			return injector.getInstance( 'validationManager@validation' );
 			
 		// for all else, defer to the ColdBox DSL builder
 		} else {
 			return coldboxDSL.process(argumentCollection=arguments);			
 		}
+	}
+	
+	private function requireModule( required moduleName, required namespace, required targetObject ) {
+		var moduleService = injector.getInstance( dsl='coldbox:moduleService' );
+		if( !moduleService.isModuleActive( arguments.moduleName ) ) {
+			throw( "You can't use the '#arguments.namespace#' DSL in #getMetaData( arguments.targetObject ).name# until you install the #arguments.moduleName# module. " );
+		}		
 	}
 	
 }
