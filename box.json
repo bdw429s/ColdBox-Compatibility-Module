@@ -49,7 +49,8 @@
         "coldbox-be":"4.0.0",
         "mailservices":"1.0.0",
         "cbdebugger":"1.0.0",
-        "validation":"1.0.0"
+        "validation":"1.0.0",
+        "cbcompat":"1.0.1.0"
     },
     "devDependencies":{
         
@@ -58,7 +59,8 @@
         "coldbox-be":"coldbox",
         "mailservices":"modules\\mailservices",
         "cbdebugger":"modules\\cbdebugger",
-        "validation":"modules\\validation"
+        "validation":"modules\\validation",
+        "cbcompat":"modules\\cbcompat"
     },
     "ignore":[
         
