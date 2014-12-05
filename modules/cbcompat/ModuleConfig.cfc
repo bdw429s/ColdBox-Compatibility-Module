@@ -47,7 +47,7 @@ component {
 	this.author 			= "Brad Wood";
 	this.webURL 			= "http://www.codersrevolution.com";
 	this.description 		= "";
-	this.version			= "1.0.0";
+	this.version			= "1.0.1";
 	// If true, looks for views in the parent first, if not found, then in the module. Else vice-versa
 	this.viewParentLookup 	= true;
 	// If true, looks for layouts in the parent first, if not found, then in module. Else vice-versa
@@ -68,6 +68,10 @@ component {
 		// No support for a custom plugins convention since I can't easily parse the config cfc
 		var pluginsConvention = 'plugins';
 		var settingStruct = controller.getSettingStructure();
+		
+		if( !structKeyExists( settingStruct, 'PluginsExternalLocation' ) ){
+			settingStruct[ 'PluginsExternalLocation' ] = '';
+		}
 		
 		// Custom Plugins Registration
 		settingStruct[ "MyPluginsInvocationPath" ] = reReplace(pluginsConvention,"(/|\\)",".","all" );
