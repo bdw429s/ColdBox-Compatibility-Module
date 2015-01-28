@@ -159,7 +159,17 @@ component {
 	* Fired when the module is unregistered and unloaded
 	*/
 	function onUnload(){
-
+		var appHelperArray = controller.getSetting( "ApplicationHelper" );
+		var mixinToRemove = "#moduleMapping#/includes/Mixins.cfm";
+		var mixinIndex = arrayFindNoCase( appHelperArray, mixinToRemove );
+		
+		// If the mixin is in the array
+		if( mixinIndex ) {
+			// Remove it
+			arrayDeleteAt( appHelperArray, mixinIndex );
+			// Arrays passed by value in Adobe CF
+			controller.setSetting( "ApplicationHelper", appHelperArray );
+		}
 	}
 
 }
