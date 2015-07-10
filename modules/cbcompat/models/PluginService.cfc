@@ -55,7 +55,7 @@ Modification History:
 			instance.customPluginsExternalPath 	= controller.getSetting('PluginsExternalLocation');
 			
 			// Override the coldbox plugin extensions if defined in the configuration
-			if( len(controller.getSetting("ColdBoxExtensionsLocation")) ){
+			if( controller.settingExists("ColdBoxExtensionsLocation") && len(controller.getSetting("ColdBoxExtensionsLocation")) ){
 				instance.extensionsPath = controller.getSetting("ColdBoxExtensionsLocation") & ".plugins";
 				instance.extensionsPhysicalPath = expandPath("/" & replace(instance.extensionsPath,".","/","all") & "/");
 			}		
